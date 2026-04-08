@@ -1,10 +1,11 @@
 ---
+import '../styles/global.css'
 interface Props {
   title?: string
   description?: string
 }
 const {
-  title = 'Instify — Turn ideas into code, automatically.',
+  title = 'Instify — Turn ideas into a real working app.',
   description = 'Instify connects your product stories to AI coding agents. Write what you want to build, Instify ships it. Mac-native, autonomous, story-driven.',
 } = Astro.props
 ---
@@ -24,8 +25,14 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- prevent flash of wrong theme -->
+    <script is:inline>
+      if (localStorage.theme === 'dark') {
+        document.documentElement.classList.add('dark')
+      }
+    </script>
   </head>
-  <body class="bg-[#080808] text-white font-sans antialiased">
+  <body class="bg-page text-prose font-sans antialiased">
     <slot />
   </body>
 </html>

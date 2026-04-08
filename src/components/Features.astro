@@ -3,84 +3,58 @@ const pillars = [
   {
     tag: 'Ideas → Reality',
     title: 'From a thought to a working app',
-    description:
-      "Most tools help you write code faster. Instify does something different — it takes your raw idea and drives it all the way to working, runnable software. You describe the outcome, agents handle the implementation.",
-    bullets: [
-      'Plain-language user stories, no technical spec needed',
-      'Agents read your codebase and write contextual code',
-      'Real-time output so you always know what\'s happening',
-    ],
+    description: "Most tools help you write code faster. Instify does something different — it takes your raw idea and drives it all the way to working, runnable software. You describe the outcome, agents handle the implementation.",
+    bullets: ["Plain-language user stories, no technical spec needed", "Agents read your codebase and write contextual code", "Real-time output so you always know what's happening"],
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>`,
-    accent: 'text-accent',
-    bg: 'bg-accent/10',
+    accent: 'text-accent', bg: 'bg-accent/10',
   },
   {
     tag: 'Story Management',
     title: 'Your ideas, organised and actionable',
-    description:
-      "A kanban board built specifically for AI-driven development. Each card is a story with a clear goal — the AI knows exactly what done looks like. Move fast without losing track of what's been built.",
-    bullets: [
-      'Kanban board with Todo, In Progress, and Done columns',
-      'Each story maps directly to one agent execution',
-      'Full history of what was built and when',
-    ],
+    description: "A kanban board built specifically for AI-driven development. Each card is a story with a clear goal — the AI knows exactly what done looks like. Move fast without losing track of what's been built.",
+    bullets: ['Kanban board with Todo, In Progress, and Done columns', 'Each story maps directly to one agent execution', 'Full history of what was built and when'],
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`,
-    accent: 'text-purple-400',
-    bg: 'bg-purple-400/10',
+    accent: 'text-purple-500', bg: 'bg-purple-500/10',
   },
   {
     tag: 'Multi-Agent',
     title: 'Right agent for the right job',
-    description:
-      "Claude Code excels at understanding complex requirements and reasoning through architecture decisions. Codex moves fast on well-defined tasks. Use both — let each do what it does best.",
-    bullets: [
-      'Claude Code for reasoning-heavy and architectural work',
-      'OpenAI Codex for fast, well-scoped implementation',
-      'Assign agents per story or per project',
-    ],
+    description: "Claude Code excels at understanding complex requirements and reasoning through architecture decisions. Codex moves fast on well-defined tasks. Use both — let each do what it does best.",
+    bullets: ['Claude Code for reasoning-heavy and architectural work', 'OpenAI Codex for fast, well-scoped implementation', 'Assign agents per story or per project'],
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="m11.9 10.7 4.2-2.4M11.9 13.3l4.2 2.4"/></svg>`,
-    accent: 'text-green-400',
-    bg: 'bg-green-400/10',
+    accent: 'text-green-600 dark:text-green-400', bg: 'bg-green-500/10',
   },
   {
     tag: 'Auto Execution',
-    title: 'Builds while you\'re away',
-    description:
-      "Long tasks don't need you watching. Instify runs stories end-to-end autonomously. When an agent hits a session quota limit, remaining work is queued and automatically resumed — no manual restart required.",
-    bullets: [
-      'Autonomous execution from start to finish',
-      'Smart queue when session limits are reached',
-      'Scheduled resumption — wake up to finished features',
-    ],
+    title: "Builds while you're away",
+    description: "Long tasks don't need you watching. Instify runs stories end-to-end autonomously. When an agent hits a session quota limit, remaining work is queued and automatically resumed — no manual restart required.",
+    bullets: ['Autonomous execution from start to finish', 'Smart queue when session limits are reached', 'Scheduled resumption — wake up to finished features'],
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
-    accent: 'text-yellow-400',
-    bg: 'bg-yellow-400/10',
+    accent: 'text-yellow-600 dark:text-yellow-400', bg: 'bg-yellow-500/10',
   },
 ]
 ---
-<section id="features" class="py-24 px-6 border-t border-border">
+<section id="features" class="py-24 px-6 border-t border-edge">
   <div class="max-w-5xl mx-auto">
 
     <div class="text-center mb-16">
       <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Features</p>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Built around how<br />real products get made.</h2>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-prose">Built around how<br />real products get made.</h2>
     </div>
 
     <div class="flex flex-col gap-6">
       {pillars.map((p, i) => (
-        <div class={`rounded-2xl border border-border bg-card p-8 flex flex-col md:flex-row gap-8 items-start ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-          <!-- Icon + tag -->
+        <div class={`rounded-2xl border border-edge bg-panel p-8 flex flex-col md:flex-row gap-8 items-start ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
           <div class="flex-shrink-0 flex flex-col items-start gap-3 md:w-56">
             <div class={`w-12 h-12 rounded-2xl ${p.bg} ${p.accent} flex items-center justify-center`} set:html={p.icon} />
             <span class={`text-xs font-semibold uppercase tracking-widest ${p.accent}`}>{p.tag}</span>
-            <h3 class="text-xl font-bold leading-snug">{p.title}</h3>
+            <h3 class="text-xl font-bold leading-snug text-prose">{p.title}</h3>
           </div>
-          <!-- Content -->
           <div class="flex-1">
-            <p class="text-gray-400 leading-relaxed mb-6">{p.description}</p>
+            <p class="text-dim leading-relaxed mb-6">{p.description}</p>
             <ul class="space-y-2.5">
               {p.bullets.map((b) => (
-                <li class="flex items-start gap-2.5 text-sm text-gray-300">
+                <li class="flex items-start gap-2.5 text-sm text-prose/80">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class={`${p.accent} flex-shrink-0 mt-0.5`}>
                     <polyline points="20 6 9 17 4 12"/>
                   </svg>

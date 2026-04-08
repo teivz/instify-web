@@ -1,38 +1,30 @@
 ---
 ---
-<section id="pricing" class="py-24 px-6 border-t border-border">
+<section id="pricing" class="py-24 px-6 border-t border-edge">
   <div class="max-w-5xl mx-auto">
 
     <div class="text-center mb-16">
       <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Pricing</p>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Start in seconds.<br />Pay only when you need more.</h2>
-      <p class="text-gray-400 mt-3 text-base">No credit card required to get started.</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-prose">Start in seconds.<br />Pay only when you need more.</h2>
+      <p class="text-dim mt-3 text-base">No credit card required to get started.</p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
 
       <!-- Free / Trial combined card -->
-      <div class="rounded-2xl border border-border bg-card p-7 flex flex-col">
+      <div class="rounded-2xl border border-edge bg-panel p-7 flex flex-col">
         <div class="mb-5">
-          <p class="text-sm font-medium text-gray-400 mb-1">Free</p>
+          <p class="text-sm font-medium text-dim mb-1">Free</p>
           <div class="flex items-end gap-1.5 mb-3">
-            <span class="text-4xl font-bold">$0</span>
-            <span class="text-gray-500 text-xs mb-1.5">forever</span>
+            <span class="text-4xl font-bold text-prose">$0</span>
+            <span class="text-muted text-xs mb-1.5">forever</span>
           </div>
-          <p class="text-sm text-gray-400 leading-relaxed">
-            Try without an account, or sign in to unlock more.
-          </p>
+          <p class="text-sm text-dim leading-relaxed">Try without an account, or sign in to unlock more.</p>
         </div>
 
-        <!-- Shared features -->
         <ul class="space-y-2.5 mb-5">
-          {[
-            '1 AI agent (your choice)',
-            'Unlimited user stories',
-            'Real-time execution output',
-            'Local codebase — no cloud sync',
-          ].map((f) => (
-            <li class="flex items-start gap-2.5 text-sm text-gray-300">
+          {['1 AI agent (your choice)', 'Unlimited user stories', 'Real-time execution output', 'Local codebase — no cloud sync'].map((f) => (
+            <li class="flex items-start gap-2.5 text-sm text-prose/80">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0 mt-0.5">
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
@@ -41,29 +33,27 @@
           ))}
         </ul>
 
-        <!-- Split: Trial vs Free -->
-        <div class="rounded-xl border border-border overflow-hidden mb-6 text-sm">
+        <!-- Trial vs Free split -->
+        <div class="rounded-xl border border-edge overflow-hidden mb-6 text-sm">
           <div class="flex">
-            <div class="flex-1 p-3 border-r border-border">
-              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Trial</p>
-              <p class="text-gray-400 text-xs leading-relaxed">No account needed</p>
-              <p class="text-white font-medium mt-2">1 project</p>
+            <div class="flex-1 p-3 border-r border-edge bg-surface">
+              <p class="text-xs font-semibold text-muted uppercase tracking-wide mb-2">Trial</p>
+              <p class="text-dim text-xs leading-relaxed">No account needed</p>
+              <p class="text-prose font-medium mt-2">1 project</p>
             </div>
-            <div class="flex-1 p-3">
+            <div class="flex-1 p-3 bg-surface">
               <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Free account</p>
-              <p class="text-gray-400 text-xs leading-relaxed">Sign in to unlock</p>
-              <p class="text-white font-medium mt-2">2 projects</p>
+              <p class="text-dim text-xs leading-relaxed">Sign in to unlock</p>
+              <p class="text-prose font-medium mt-2">2 projects</p>
             </div>
           </div>
         </div>
 
         <div class="flex flex-col gap-2 mt-auto">
-          <a href="#download" class="text-center py-2.5 rounded-xl text-sm font-semibold bg-white/5 hover:bg-white/10 text-white border border-border transition-colors">
+          <a href="#download" class="text-center py-2.5 rounded-xl text-sm font-semibold border border-edge bg-surface hover:bg-edge text-prose transition-colors">
             Download and try
           </a>
-          <p class="text-center text-xs text-gray-600">
-            Sign in anytime to go Trial → Free — no reinstall needed.
-          </p>
+          <p class="text-center text-xs text-muted">Sign in anytime to go Trial → Free — no reinstall needed.</p>
         </div>
       </div>
 
@@ -74,25 +64,17 @@
         </div>
 
         <div class="mb-5">
-          <p class="text-sm font-medium text-gray-400 mb-1">Pro</p>
+          <p class="text-sm font-medium text-dim mb-1">Pro</p>
           <div class="flex items-end gap-1.5 mb-3">
-            <span class="text-4xl font-bold">$12</span>
-            <span class="text-gray-500 text-xs mb-1.5">per month</span>
+            <span class="text-4xl font-bold text-prose">$12</span>
+            <span class="text-muted text-xs mb-1.5">per month</span>
           </div>
-          <p class="text-sm text-gray-400 leading-relaxed">
-            Unlimited projects, all agents, and scheduled execution for long-running tasks.
-          </p>
+          <p class="text-sm text-dim leading-relaxed">Unlimited projects, all agents, and scheduled execution for long-running tasks.</p>
         </div>
 
         <ul class="space-y-2.5 mb-8 flex-1">
-          {[
-            'Unlimited projects',
-            'All AI agents (Claude Code + Codex)',
-            'Automatic task scheduling & resumption',
-            'Priority support',
-            'Early access to new features',
-          ].map((f) => (
-            <li class="flex items-start gap-2.5 text-sm text-gray-300">
+          {['Unlimited projects', 'All AI agents (Claude Code + Codex)', 'Automatic task scheduling & resumption', 'Priority support', 'Early access to new features'].map((f) => (
+            <li class="flex items-start gap-2.5 text-sm text-prose/80">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0 mt-0.5">
                 <polyline points="20 6 9 17 4 12"/>
               </svg>

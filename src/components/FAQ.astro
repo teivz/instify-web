@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: 'Does my code get sent to a cloud server?',
-    a: 'No. Instify is a Mac-native app and everything runs locally on your machine. Your source code never leaves your computer. The only external calls are to the AI provider APIs (Anthropic or OpenAI) to run the agent — the same calls you would make manually.',
+    a: "No. Instify is a Mac-native app and everything runs locally on your machine. Your source code never leaves your computer. The only external calls are to the AI provider APIs (Anthropic or OpenAI) to run the agent — the same calls you'd make manually.",
   },
   {
     q: 'What happens when an agent hits its session quota?',
@@ -26,28 +26,28 @@ const faqs = [
   },
 ]
 ---
-<section class="py-24 px-6 border-t border-border">
+<section class="py-24 px-6 border-t border-edge">
   <div class="max-w-2xl mx-auto">
 
     <div class="text-center mb-14">
       <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-3">FAQ</p>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Questions we get a lot.</h2>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-prose">Questions we get a lot.</h2>
     </div>
 
-    <div class="divide-y divide-border">
+    <div class="divide-y divide-edge">
       {faqs.map((faq) => (
         <details class="group py-5 cursor-pointer">
-          <summary class="flex items-center justify-between gap-4 text-sm font-medium text-white list-none select-none">
+          <summary class="flex items-center justify-between gap-4 text-sm font-medium text-prose">
             {faq.q}
             <svg
               width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="flex-shrink-0 text-gray-500 transition-transform group-open:rotate-45"
+              class="flex-shrink-0 text-muted transition-transform group-open:rotate-45"
             >
               <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
             </svg>
           </summary>
-          <p class="mt-3 text-sm text-gray-400 leading-relaxed">{faq.a}</p>
+          <p class="mt-3 text-sm text-dim leading-relaxed">{faq.a}</p>
         </details>
       ))}
     </div>

@@ -18,12 +18,12 @@ const badges = [
   },
 ]
 ---
-<section class="py-10 px-6 border-y border-border">
+<section class="py-10 px-6 border-y border-edge">
   <div class="max-w-5xl mx-auto">
     <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
       {badges.map((b) => (
-        <div class="flex items-center gap-2 text-sm text-gray-400">
-          <span class="text-gray-500" set:html={b.icon} />
+        <div class="flex items-center gap-2 text-sm text-dim">
+          <span class="text-muted" set:html={b.icon} />
           {b.label}
         </div>
       ))}
