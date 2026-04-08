@@ -9,9 +9,9 @@
       <p class="text-dim mt-3 text-base">No credit card required to get started.</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-5">
 
-      <!-- Free / Trial combined card -->
+      <!-- Free card -->
       <div class="rounded-2xl border border-edge bg-panel p-7 flex flex-col">
         <div class="mb-5">
           <p class="text-sm font-medium text-dim mb-1">Free</p>
@@ -57,23 +57,29 @@
         </div>
       </div>
 
-      <!-- Pro card -->
+      <!-- Personal card -->
       <div class="relative rounded-2xl border border-accent bg-accent/5 p-7 flex flex-col">
         <div class="absolute -top-3 left-1/2 -translate-x-1/2">
           <span class="bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">Most popular</span>
         </div>
 
         <div class="mb-5">
-          <p class="text-sm font-medium text-dim mb-1">Pro</p>
+          <p class="text-sm font-medium text-dim mb-1">Personal</p>
           <div class="flex items-end gap-1.5 mb-3">
             <span class="text-4xl font-bold text-prose">$12</span>
-            <span class="text-muted text-xs mb-1.5">per month</span>
+            <span class="text-muted text-xs mb-1.5">/ month</span>
           </div>
-          <p class="text-sm text-dim leading-relaxed">Unlimited projects, all agents, and scheduled execution for long-running tasks.</p>
+          <p class="text-sm text-dim leading-relaxed">Unlimited projects and all agents. Your Mac runs the execution.</p>
         </div>
 
         <ul class="space-y-2.5 mb-8 flex-1">
-          {['Unlimited projects', 'All AI agents (Claude Code + Codex)', 'Automatic task scheduling & resumption', 'Priority support', 'Early access to new features'].map((f) => (
+          {[
+            'Unlimited projects',
+            'All AI agents (Claude Code + Codex)',
+            'Automatic task scheduling & resumption',
+            'Priority support',
+            'Early access to new features',
+          ].map((f) => (
             <li class="flex items-start gap-2.5 text-sm text-prose/80">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0 mt-0.5">
                 <polyline points="20 6 9 17 4 12"/>
@@ -84,6 +90,40 @@
         </ul>
 
         <a href="#" class="text-center py-2.5 rounded-xl text-sm font-semibold bg-accent hover:bg-blue-500 text-white transition-colors">
+          Get Personal
+        </a>
+      </div>
+
+      <!-- Pro card -->
+      <div class="relative rounded-2xl border border-edge bg-panel p-7 flex flex-col">
+        <div class="mb-5">
+          <p class="text-sm font-medium text-dim mb-1">Pro</p>
+          <div class="flex items-end gap-1.5 mb-3">
+            <span class="text-4xl font-bold text-prose">$39</span>
+            <span class="text-muted text-xs mb-1.5">/ month</span>
+          </div>
+          <p class="text-sm text-dim leading-relaxed">Everything in Personal, plus agents that run in the cloud — even when your Mac is off.</p>
+        </div>
+
+        <ul class="space-y-2.5 mb-8 flex-1">
+          {[
+            'Everything in Personal',
+            'Cloud agent execution',
+            'Runs while your Mac is closed or off',
+            'Parallel agent runs in the cloud',
+            'Dedicated cloud compute',
+            'Priority cloud queue',
+          ].map((f, i) => (
+            <li class="flex items-start gap-2.5 text-sm text-prose/80">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class={`flex-shrink-0 mt-0.5 ${i === 0 ? 'text-muted' : 'text-accent'}`}>
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              {f}
+            </li>
+          ))}
+        </ul>
+
+        <a href="#" class="text-center py-2.5 rounded-xl text-sm font-semibold border border-edge bg-surface hover:bg-edge text-prose transition-colors">
           Get Pro
         </a>
       </div>
