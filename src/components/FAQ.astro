@@ -1,0 +1,56 @@
+---
+const faqs = [
+  {
+    q: 'Do I need to know how to code to use Instify?',
+    a: 'You need a basic understanding of software projects — enough to describe what you want to build. The AI agents handle the actual coding. Most users are developers who want to move faster, not non-technical users.',
+  },
+  {
+    q: 'What AI agents does Instify support?',
+    a: 'Currently Claude Code (by Anthropic) and OpenAI Codex. Free users can choose one agent to use across all projects. Pro users can use both and assign different agents to different stories.',
+  },
+  {
+    q: 'Does my code get sent to a cloud server?',
+    a: 'No. Instify is a Mac-native app and everything runs locally on your machine. Your source code never leaves your computer. The only external calls are to the AI provider APIs (Anthropic or OpenAI) to run the agent — the same calls you would make manually.',
+  },
+  {
+    q: 'What happens when an agent hits its session quota?',
+    a: "When an agent reaches its context or session limit mid-task, Instify queues the remaining work and automatically resumes it in a new session. You don't need to restart anything manually — the agent picks up where it left off.",
+  },
+  {
+    q: 'What kind of projects work best with Instify?',
+    a: 'Web apps, APIs, CLI tools, mobile apps — anything with a clear codebase that can be described in user stories. Instify works best when stories are specific and scoped. "Add a login page with GitHub OAuth" works great. "Make the app better" does not.',
+  },
+  {
+    q: 'Is there a free plan?',
+    a: 'Yes. The free plan includes up to 2 projects and 1 AI agent of your choice. No credit card required. Upgrade to Pro when you need unlimited projects and access to all agents.',
+  },
+]
+---
+<section class="py-24 px-6 border-t border-border">
+  <div class="max-w-2xl mx-auto">
+
+    <div class="text-center mb-14">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-3">FAQ</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Questions we get a lot.</h2>
+    </div>
+
+    <div class="divide-y divide-border">
+      {faqs.map((faq) => (
+        <details class="group py-5 cursor-pointer">
+          <summary class="flex items-center justify-between gap-4 text-sm font-medium text-white list-none select-none">
+            {faq.q}
+            <svg
+              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="flex-shrink-0 text-gray-500 transition-transform group-open:rotate-45"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-sm text-gray-400 leading-relaxed">{faq.a}</p>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>
