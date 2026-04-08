@@ -1,57 +1,4 @@
 ---
-const plans = [
-  {
-    name: 'Trial',
-    price: '$0',
-    period: 'no account needed',
-    description: 'Try Instify instantly. No sign-up, no credit card — just download and start.',
-    cta: 'Download and try',
-    ctaHref: '#download',
-    highlight: false,
-    features: [
-      '1 project',
-      '1 AI agent (your choice)',
-      'Unlimited user stories',
-      'Real-time execution output',
-      'Local codebase — no cloud sync',
-    ],
-    note: null,
-  },
-  {
-    name: 'Free',
-    price: '$0',
-    period: 'free account',
-    description: 'Sign in with GitHub, Google, or Apple to unlock a second project.',
-    cta: 'Sign in for free',
-    ctaHref: '#download',
-    highlight: false,
-    features: [
-      '2 projects',
-      '1 AI agent (your choice)',
-      'Unlimited user stories',
-      'Real-time execution output',
-      'Local codebase — no cloud sync',
-    ],
-    note: 'Everything in Trial, plus one more project.',
-  },
-  {
-    name: 'Pro',
-    price: '$12',
-    period: 'per month',
-    description: 'Unlimited projects, all agents, and scheduled execution for long-running tasks.',
-    cta: 'Get Pro',
-    ctaHref: '#',
-    highlight: true,
-    features: [
-      'Unlimited projects',
-      'All AI agents (Claude Code + Codex)',
-      'Automatic task scheduling & resumption',
-      'Priority support',
-      'Early access to new features',
-    ],
-    note: null,
-  },
-]
 ---
 <section id="pricing" class="py-24 px-6 border-t border-border">
   <div class="max-w-5xl mx-auto">
@@ -62,61 +9,104 @@ const plans = [
       <p class="text-gray-400 mt-3 text-base">No credit card required to get started.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-5">
-      {plans.map((plan) => (
-        <div class={`relative rounded-2xl p-7 border flex flex-col ${
-          plan.highlight
-            ? 'border-accent bg-accent/5'
-            : 'border-border bg-card'
-        }`}>
-          {plan.highlight && (
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-              <span class="bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">Most popular</span>
-            </div>
-          )}
+    <div class="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
 
-          <div class="mb-6">
-            <p class="text-sm font-medium text-gray-400 mb-1">{plan.name}</p>
-            <div class="flex items-end gap-1.5 mb-3">
-              <span class="text-4xl font-bold">{plan.price}</span>
-              <span class="text-gray-500 text-xs mb-1.5">{plan.period}</span>
-            </div>
-            <p class="text-sm text-gray-400 leading-relaxed">{plan.description}</p>
+      <!-- Free / Trial combined card -->
+      <div class="rounded-2xl border border-border bg-card p-7 flex flex-col">
+        <div class="mb-5">
+          <p class="text-sm font-medium text-gray-400 mb-1">Free</p>
+          <div class="flex items-end gap-1.5 mb-3">
+            <span class="text-4xl font-bold">$0</span>
+            <span class="text-gray-500 text-xs mb-1.5">forever</span>
           </div>
-
-          <ul class="space-y-2.5 mb-6 flex-1">
-            {plan.features.map((f) => (
-              <li class="flex items-start gap-2.5 text-sm text-gray-300">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0 mt-0.5">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                {f}
-              </li>
-            ))}
-          </ul>
-
-          {plan.note && (
-            <p class="text-xs text-gray-500 mb-5 italic">{plan.note}</p>
-          )}
-
-          <a
-            href={plan.ctaHref}
-            class={`text-center py-2.5 rounded-xl text-sm font-semibold transition-colors ${
-              plan.highlight
-                ? 'bg-accent hover:bg-blue-500 text-white'
-                : 'bg-white/5 hover:bg-white/10 text-white border border-border'
-            }`}
-          >
-            {plan.cta}
-          </a>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Try without an account, or sign in to unlock more.
+          </p>
         </div>
-      ))}
-    </div>
 
-    <!-- Comparison note -->
-    <p class="text-center text-xs text-gray-600 mt-8">
-      Trial → Free upgrade is instant — just sign in. No data lost, no reinstall needed.
-    </p>
+        <!-- Shared features -->
+        <ul class="space-y-2.5 mb-5">
+          {[
+            '1 AI agent (your choice)',
+            'Unlimited user stories',
+            'Real-time execution output',
+            'Local codebase — no cloud sync',
+          ].map((f) => (
+            <li class="flex items-start gap-2.5 text-sm text-gray-300">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0 mt-0.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              {f}
+            </li>
+          ))}
+        </ul>
+
+        <!-- Split: Trial vs Free -->
+        <div class="rounded-xl border border-border overflow-hidden mb-6 text-sm">
+          <div class="flex">
+            <div class="flex-1 p-3 border-r border-border">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Trial</p>
+              <p class="text-gray-400 text-xs leading-relaxed">No account needed</p>
+              <p class="text-white font-medium mt-2">1 project</p>
+            </div>
+            <div class="flex-1 p-3">
+              <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Free account</p>
+              <p class="text-gray-400 text-xs leading-relaxed">Sign in to unlock</p>
+              <p class="text-white font-medium mt-2">2 projects</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 mt-auto">
+          <a href="#download" class="text-center py-2.5 rounded-xl text-sm font-semibold bg-white/5 hover:bg-white/10 text-white border border-border transition-colors">
+            Download and try
+          </a>
+          <p class="text-center text-xs text-gray-600">
+            Sign in anytime to go Trial → Free — no reinstall needed.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pro card -->
+      <div class="relative rounded-2xl border border-accent bg-accent/5 p-7 flex flex-col">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span class="bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">Most popular</span>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-sm font-medium text-gray-400 mb-1">Pro</p>
+          <div class="flex items-end gap-1.5 mb-3">
+            <span class="text-4xl font-bold">$12</span>
+            <span class="text-gray-500 text-xs mb-1.5">per month</span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Unlimited projects, all agents, and scheduled execution for long-running tasks.
+          </p>
+        </div>
+
+        <ul class="space-y-2.5 mb-8 flex-1">
+          {[
+            'Unlimited projects',
+            'All AI agents (Claude Code + Codex)',
+            'Automatic task scheduling & resumption',
+            'Priority support',
+            'Early access to new features',
+          ].map((f) => (
+            <li class="flex items-start gap-2.5 text-sm text-gray-300">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0 mt-0.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              {f}
+            </li>
+          ))}
+        </ul>
+
+        <a href="#" class="text-center py-2.5 rounded-xl text-sm font-semibold bg-accent hover:bg-blue-500 text-white transition-colors">
+          Get Pro
+        </a>
+      </div>
+
+    </div>
 
   </div>
 </section>
