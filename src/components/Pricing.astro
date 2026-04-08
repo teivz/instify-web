@@ -1,11 +1,28 @@
 ---
 const plans = [
   {
+    name: 'Trial',
+    price: '$0',
+    period: 'no account needed',
+    description: 'Try Instify instantly. No sign-up, no credit card — just download and start.',
+    cta: 'Download and try',
+    ctaHref: '#download',
+    highlight: false,
+    features: [
+      '1 project',
+      '1 AI agent (your choice)',
+      'Unlimited user stories',
+      'Real-time execution output',
+      'Local codebase — no cloud sync',
+    ],
+    note: null,
+  },
+  {
     name: 'Free',
     price: '$0',
-    period: 'forever',
-    description: 'Get started with one project and one agent. No credit card required.',
-    cta: 'Download for free',
+    period: 'free account',
+    description: 'Sign in with GitHub, Google, or Apple to unlock a second project.',
+    cta: 'Sign in for free',
     ctaHref: '#download',
     highlight: false,
     features: [
@@ -13,24 +30,26 @@ const plans = [
       '1 AI agent (your choice)',
       'Unlimited user stories',
       'Real-time execution output',
-      'Local codebase support',
+      'Local codebase — no cloud sync',
     ],
+    note: 'Everything in Trial, plus one more project.',
   },
   {
     name: 'Pro',
     price: '$12',
     period: 'per month',
-    description: 'For developers who want to move fast with multiple projects and all agents.',
+    description: 'Unlimited projects, all agents, and scheduled execution for long-running tasks.',
     cta: 'Get Pro',
     ctaHref: '#',
     highlight: true,
     features: [
       'Unlimited projects',
       'All AI agents (Claude Code + Codex)',
+      'Automatic task scheduling & resumption',
       'Priority support',
       'Early access to new features',
-      'Everything in Free',
     ],
+    note: null,
   },
 ]
 ---
@@ -39,11 +58,11 @@ const plans = [
 
     <div class="text-center mb-16">
       <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Pricing</p>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Simple, honest pricing.</h2>
-      <p class="text-gray-400 mt-3 text-base">Start free. Upgrade when you need more.</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Start in seconds.<br />Pay only when you need more.</h2>
+      <p class="text-gray-400 mt-3 text-base">No credit card required to get started.</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-5">
       {plans.map((plan) => (
         <div class={`relative rounded-2xl p-7 border flex flex-col ${
           plan.highlight
@@ -60,21 +79,25 @@ const plans = [
             <p class="text-sm font-medium text-gray-400 mb-1">{plan.name}</p>
             <div class="flex items-end gap-1.5 mb-3">
               <span class="text-4xl font-bold">{plan.price}</span>
-              <span class="text-gray-400 text-sm mb-1">{plan.period}</span>
+              <span class="text-gray-500 text-xs mb-1.5">{plan.period}</span>
             </div>
             <p class="text-sm text-gray-400 leading-relaxed">{plan.description}</p>
           </div>
 
-          <ul class="space-y-2.5 mb-8 flex-1">
+          <ul class="space-y-2.5 mb-6 flex-1">
             {plan.features.map((f) => (
-              <li class="flex items-center gap-2.5 text-sm text-gray-300">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0">
+              <li class="flex items-start gap-2.5 text-sm text-gray-300">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0 mt-0.5">
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
                 {f}
               </li>
             ))}
           </ul>
+
+          {plan.note && (
+            <p class="text-xs text-gray-500 mb-5 italic">{plan.note}</p>
+          )}
 
           <a
             href={plan.ctaHref}
@@ -89,6 +112,11 @@ const plans = [
         </div>
       ))}
     </div>
+
+    <!-- Comparison note -->
+    <p class="text-center text-xs text-gray-600 mt-8">
+      Trial → Free upgrade is instant — just sign in. No data lost, no reinstall needed.
+    </p>
 
   </div>
 </section>
