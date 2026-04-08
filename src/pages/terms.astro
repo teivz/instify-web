@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+---
+<Base title="Terms of Service — Instify">
+  <Nav />
+  <main class="max-w-2xl mx-auto px-6 pt-32 pb-20">
+    <h1 class="text-3xl font-bold mb-2">Terms of Service</h1>
+    <p class="text-gray-400 text-sm mb-10">Last updated: April 2026</p>
+    <div class="prose prose-invert prose-sm max-w-none text-gray-300 leading-relaxed space-y-6">
+      <p>By downloading or using Instify, you agree to these terms. If you don't agree, don't use the app.</p>
+      <h2 class="text-white font-semibold text-base mt-8">Use of the app</h2>
+      <p>Instify is provided as-is for personal and commercial use. You may not reverse-engineer, redistribute, or resell the app.</p>
+      <h2 class="text-white font-semibold text-base mt-8">AI agents</h2>
+      <p>Instify integrates with third-party AI services (Anthropic Claude, OpenAI Codex). Their respective terms of service apply to your use of those agents. We are not responsible for code produced by AI agents.</p>
+      <h2 class="text-white font-semibold text-base mt-8">Subscriptions</h2>
+      <p>Pro subscriptions are billed monthly. You can cancel at any time. No refunds are issued for partial months.</p>
+      <h2 class="text-white font-semibold text-base mt-8">Liability</h2>
+      <p>Instify is provided without warranty. We are not liable for any damages arising from use of the app or AI-generated code.</p>
+      <h2 class="text-white font-semibold text-base mt-8">Contact</h2>
+      <p>Questions? Email us at <a href="mailto:hello@instify.ai" class="text-accent hover:underline">hello@instify.ai</a></p>
+    </div>
+  </main>
+  <Footer />
+</Base>

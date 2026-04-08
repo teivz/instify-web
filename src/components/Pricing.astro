@@ -1,0 +1,94 @@
+---
+const plans = [
+  {
+    name: 'Free',
+    price: '$0',
+    period: 'forever',
+    description: 'Get started with one project and one agent. No credit card required.',
+    cta: 'Download for free',
+    ctaHref: '#download',
+    highlight: false,
+    features: [
+      '2 projects',
+      '1 AI agent (your choice)',
+      'Unlimited user stories',
+      'Real-time execution output',
+      'Local codebase support',
+    ],
+  },
+  {
+    name: 'Pro',
+    price: '$12',
+    period: 'per month',
+    description: 'For developers who want to move fast with multiple projects and all agents.',
+    cta: 'Get Pro',
+    ctaHref: '#',
+    highlight: true,
+    features: [
+      'Unlimited projects',
+      'All AI agents (Claude Code + Codex)',
+      'Priority support',
+      'Early access to new features',
+      'Everything in Free',
+    ],
+  },
+]
+---
+<section id="pricing" class="py-24 px-6 border-t border-border">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-16">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Pricing</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Simple, honest pricing.</h2>
+      <p class="text-gray-400 mt-3 text-base">Start free. Upgrade when you need more.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+      {plans.map((plan) => (
+        <div class={`relative rounded-2xl p-7 border flex flex-col ${
+          plan.highlight
+            ? 'border-accent bg-accent/5'
+            : 'border-border bg-card'
+        }`}>
+          {plan.highlight && (
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+              <span class="bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">Most popular</span>
+            </div>
+          )}
+
+          <div class="mb-6">
+            <p class="text-sm font-medium text-gray-400 mb-1">{plan.name}</p>
+            <div class="flex items-end gap-1.5 mb-3">
+              <span class="text-4xl font-bold">{plan.price}</span>
+              <span class="text-gray-400 text-sm mb-1">{plan.period}</span>
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed">{plan.description}</p>
+          </div>
+
+          <ul class="space-y-2.5 mb-8 flex-1">
+            {plan.features.map((f) => (
+              <li class="flex items-center gap-2.5 text-sm text-gray-300">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={plan.ctaHref}
+            class={`text-center py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+              plan.highlight
+                ? 'bg-accent hover:bg-blue-500 text-white'
+                : 'bg-white/5 hover:bg-white/10 text-white border border-border'
+            }`}
+          >
+            {plan.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

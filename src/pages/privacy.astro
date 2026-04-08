@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+---
+<Base title="Privacy Policy — Instify">
+  <Nav />
+  <main class="max-w-2xl mx-auto px-6 pt-32 pb-20">
+    <h1 class="text-3xl font-bold mb-2">Privacy Policy</h1>
+    <p class="text-gray-400 text-sm mb-10">Last updated: April 2026</p>
+    <div class="prose prose-invert prose-sm max-w-none text-gray-300 leading-relaxed space-y-6">
+      <p>Your privacy matters. Here is exactly what Instify collects and why.</p>
+      <h2 class="text-white font-semibold text-base mt-8">What we collect</h2>
+      <p>If you sign in, we store your name, email, and provider (GitHub, Google, or Apple) via Supabase Auth. We do not collect or store your code or project contents — everything stays on your machine.</p>
+      <h2 class="text-white font-semibold text-base mt-8">What we don't collect</h2>
+      <p>We do not sell your data. We do not track usage beyond what is necessary to validate your subscription. We do not read your source code.</p>
+      <h2 class="text-white font-semibold text-base mt-8">Third-party services</h2>
+      <p>Instify uses Supabase for authentication and Polar.sh for subscription management. Their respective privacy policies apply.</p>
+      <h2 class="text-white font-semibold text-base mt-8">Data deletion</h2>
+      <p>You can delete your account at any time from within the app. All associated data is permanently removed.</p>
+      <h2 class="text-white font-semibold text-base mt-8">Contact</h2>
+      <p>Questions? Email us at <a href="mailto:hello@instify.ai" class="text-accent hover:underline">hello@instify.ai</a></p>
+    </div>
+  </main>
+  <Footer />
+</Base>

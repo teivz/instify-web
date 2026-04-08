@@ -1,0 +1,54 @@
+---
+const features = [
+  {
+    title: 'Mac-native',
+    description: 'Built for macOS from the ground up. Feels at home on your desktop — not a web app crammed into a window.',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>`,
+  },
+  {
+    title: 'Story-driven workflow',
+    description: 'Organise work as user stories on a kanban board. Each story is a clear unit of work for the AI agent to execute.',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`,
+  },
+  {
+    title: 'Multi-agent support',
+    description: 'Use Claude Code, OpenAI Codex, or both. Switch agents per project or upgrade to Pro to run them all.',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>`,
+  },
+  {
+    title: 'Real-time execution output',
+    description: 'Watch what the agent is doing as it happens. Every command, every file change, streamed live to your screen.',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>`,
+  },
+  {
+    title: 'Spec-driven by design',
+    description: 'Powered by OpenSpec — a structured framework that keeps agents focused and prevents them going off-track.',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+  },
+  {
+    title: 'Works on your codebase',
+    description: 'Point Instify at any local project folder. No cloud sync, no vendor lock-in — your code stays on your machine.',
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>`,
+  },
+]
+---
+<section id="features" class="py-24 px-6 border-t border-border">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-16">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Features</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Everything you need,<br />nothing you don't.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+      {features.map((f) => (
+        <div class="bg-card p-6 hover:bg-[#1f1f1f] transition-colors">
+          <div class="w-9 h-9 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4" set:html={f.icon} />
+          <h3 class="text-sm font-semibold mb-2">{f.title}</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">{f.description}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

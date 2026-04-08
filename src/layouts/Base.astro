@@ -1,0 +1,31 @@
+---
+interface Props {
+  title?: string
+  description?: string
+}
+const {
+  title = 'Instify — Turn ideas into code, automatically.',
+  description = 'Instify connects your product stories to AI coding agents. Write what you want to build, Instify ships it. Mac-native, autonomous, story-driven.',
+} = Astro.props
+---
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://instify.ai" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#080808] text-white font-sans antialiased">
+    <slot />
+  </body>
+</html>
