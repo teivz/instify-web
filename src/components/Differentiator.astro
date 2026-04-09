@@ -1,0 +1,92 @@
+---
+---
+<section class="py-24 px-6 border-t border-edge bg-surface">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-16">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Why Instify</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-prose leading-[1.15]">
+        Every other AI tool forgets<br />what it just built.
+      </h2>
+      <p class="text-dim mt-4 text-base max-w-2xl mx-auto leading-relaxed">
+        You prompt, you get code, the chat disappears. A week later you can't remember what was added or why.
+        Instify works differently — every feature your app gains is a story on your board, permanently.
+      </p>
+    </div>
+
+    <!-- Before / After split -->
+    <div class="grid md:grid-cols-2 gap-5 mb-16">
+
+      <!-- Other tools -->
+      <div class="rounded-2xl border border-edge bg-panel p-7">
+        <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-5">Every other AI coding tool</p>
+        <ul class="space-y-4">
+          {[
+            ['chat-bubble-left', 'You type a prompt in a chat window'],
+            ['sparkles', 'AI writes the code'],
+            ['trash', 'The conversation disappears'],
+            ['questionmark.circle', '"What changed last Tuesday?" — no idea'],
+            ['exclamationmark.triangle', 'Six months later the codebase is a mystery'],
+          ].map(([icon, text]) => (
+            <li class="flex items-start gap-3 text-sm text-dim">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted flex-shrink-0 mt-0.5">
+                <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+              </svg>
+              {text}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Instify -->
+      <div class="rounded-2xl border border-accent/30 bg-accent/5 p-7">
+        <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-5">With Instify</p>
+        <ul class="space-y-4">
+          {[
+            'Each idea lives as a user story on your board',
+            'Agent executes it — full output log saved',
+            'Story moves to Done — it never disappears',
+            '"What shipped last Tuesday?" — open the board',
+            'Six months later: your entire app history, story by story',
+          ].map((text) => (
+            <li class="flex items-start gap-3 text-sm text-prose/80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0 mt-0.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              {text}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Three insight cards -->
+    <div class="grid md:grid-cols-3 gap-5">
+      {[
+        {
+          icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
+          title: 'Your board is your changelog',
+          body: 'Done is permanent. Every story you ship becomes a record — what you wanted, which agent ran it, and when. No separate docs needed.',
+        },
+        {
+          icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+          title: 'Trace any feature back',
+          body: 'Wonder why a piece of code exists? Find the story that created it. Full execution logs mean nothing is a black box.',
+        },
+        {
+          icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>`,
+          title: 'Context that survives sessions',
+          body: 'Unlike chat tools that reset every conversation, Instify keeps the full story of your app — across days, weeks, and every agent session.',
+        },
+      ].map((card) => (
+        <div class="rounded-2xl border border-edge bg-panel p-6">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-4" set:html={card.icon} />
+          <h3 class="text-sm font-semibold text-prose mb-2">{card.title}</h3>
+          <p class="text-sm text-dim leading-relaxed">{card.body}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
