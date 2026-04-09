@@ -1,0 +1,62 @@
+---
+---
+<section class="py-24 px-6 border-t border-edge bg-page">
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Headline -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Built for solo builders</p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-prose mb-6">
+        One person to<br />build everything.
+      </h2>
+      <p class="text-dim text-lg leading-relaxed">
+        You don't need a team. You need the right system.
+        Instify turns your ideas into a full engineering workflow —
+        agents write code, run tests, and ship features while you think about what to build next.
+      </p>
+    </div>
+
+    <!-- Three contrast cards -->
+    <div class="grid md:grid-cols-3 gap-4 mb-16">
+      {[
+        {
+          before: 'Hire 3 engineers',
+          after:  'Just you',
+          desc:   'One person with Instify moves faster than a small team without it.',
+          icon:   'person.fill',
+        },
+        {
+          before: 'Weeks of execution',
+          after:  'Hours',
+          desc:   'Write a story in the morning. Have working code by afternoon — no context switching.',
+          icon:   'bolt.fill',
+        },
+        {
+          before: 'Lost in Slack threads',
+          after:  'Your board tells the story',
+          desc:   'Every feature ever built lives in your project board. Nothing disappears.',
+          icon:   'list.bullet',
+        },
+      ].map(({ before, after, desc }) => (
+        <div class="rounded-2xl border border-edge bg-surface p-6 flex flex-col gap-3">
+          <div class="flex items-center gap-2 text-xs text-muted">
+            <span class="line-through opacity-60">{before}</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-accent flex-shrink-0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="text-accent font-semibold">{after}</span>
+          </div>
+          <p class="text-sm text-dim leading-relaxed">{desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bold bottom statement -->
+    <div class="rounded-2xl bg-accent/5 border border-accent/20 px-8 py-10 text-center">
+      <p class="text-2xl md:text-3xl font-bold text-prose leading-snug max-w-2xl mx-auto">
+        "I used to think I needed a co-founder to ship fast.<br class="hidden md:block" />
+        <span class="text-accent">Now I just need Instify."</span>
+      </p>
+      <p class="text-sm text-muted mt-4">Solo indie developer, shipped 3 apps in 2 months</p>
+    </div>
+
+  </div>
+</section>
